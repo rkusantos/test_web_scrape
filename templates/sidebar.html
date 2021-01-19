@@ -27,15 +27,15 @@
     {% if user|is_group:"(group name)" %} 
     {% endcomment %}
     <!-- Nav Item - Pages Collapse Menu --><!-- Nav Item - Pages Collapse Menu -->
-      <li class="{% if 'teacher_directory' in request.path %}nav-item active {% else %}nav-item  {%endif %}">
+      <li class="{% if 'scrape' in request.path %}nav-item active {% else %}nav-item  {%endif %}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-search-dollar"></i>
           <span>Web Search</span>
         </a>
-        <div id="collapseTwo" class="{% if 'teacher_directory' in request.path  %}collapse show {% else %}collapse  {%endif %}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="{% if 'scrape' in request.path  %}collapse show {% else %}collapse  {%endif %}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Functions:</h6>
-            {% comment %} <a class="{% if 'teacher_subject_list' in request.path %}collapse-item active{% else %}collapse-item{% endif %}" href="{% url 'teacher_directory:teacher_subject_list' %}"><i class=""></i>Teacher Subject List</a> {% endcomment %}
+            <a class="{% if 'scrape' in request.path %}collapse-item active{% else %}collapse-item{% endif %}" href="{% url 'scrape_app:search_product' %}"><i class=""></i>Product Search</a>
           </div>
         </div>
       </li>
