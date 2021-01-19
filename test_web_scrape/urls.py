@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
+from . import views
 from django.conf.urls.static import static
 from scrape_app.views import *
 
 
 
-test_task(repeat=10,repeat_until=None)
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home', views.HomePage.as_view(), name="home"),
     path('scrape_app/', include("scrape_app.urls", namespace="scrape_app")),
 ]

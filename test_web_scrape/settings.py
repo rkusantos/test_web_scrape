@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'scrape_app.apps.ScrapeAppConfig',
-    'background_task',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -108,17 +108,21 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'Etc/GMT+4'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+
+
 
 STATIC_URL = '/static/'
 
@@ -129,3 +133,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_ROOT = "D:/KN/knportal/media"
+
+
+
+# INTERNAL_IPS = ['127.0.0.1',]
+# SHOW_TOOLBAR_CALLBACK = True
+from django.conf.global_settings import DATETIME_INPUT_FORMATS, DATE_INPUT_FORMATS
+
+DATE_INPUT_FORMATS += ("%d-%m-%Y",)
+DATETIME_INPUT_FORMATS += ("%m/%d/%Y %H:%M:%S",)
